@@ -9,7 +9,12 @@ public class PayEstimator {
         return hrs;
     }
 
-    public int calcNormalPay(String start, String bed) {
-        return normalRate;
+    public int calcNormalPay(int start, int bed) {
+
+        
+
+        int totalNormHrs = bed - start;
+
+        return totalNormHrs * normalRate;
     }
 }
