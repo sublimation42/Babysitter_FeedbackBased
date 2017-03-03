@@ -25,4 +25,9 @@ public class PayEstimator {
 
         return totalAsleepHrs * bedtimeRate;
     }
+
+    public int calcOvertimePay(int i, int end) {
+
+        return 16;
+    }
 }

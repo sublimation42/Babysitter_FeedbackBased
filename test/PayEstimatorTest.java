@@ -38,4 +38,10 @@ public class PayEstimatorTest {
         assertEquals(8, p.calcAsleepPay(9, 10));
     }
 
+    @Test
+    public void providedMidnightTimeCalculateOvertime()
+    {
+        assertEquals(16, p.calcOvertimePay (0, 1));
+    }
+
 }
