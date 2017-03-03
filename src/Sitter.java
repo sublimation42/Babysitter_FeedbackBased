@@ -1,3 +1,6 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 /**
  * Created by Adam on 3/3/2017.
  */
@@ -5,7 +8,11 @@
 
 public class Sitter {
 
-    public static final String EarliestStart = "5PM";
+
+    public static final SimpleDateFormat TWELVE = new SimpleDateFormat("hh:a");
+    public static final SimpleDateFormat TWENTYFOUR = new SimpleDateFormat("HH");
+    public static final int EARLIEST_START = 17;
+    public static final int LATEST_END = 3;
 
 
     public String sitterGreeting(String incoming) {
@@ -14,22 +21,25 @@ public class Sitter {
 
     public Boolean isStartTimeAcceptable(String start){
 
-        String[] startTime = start.split(":");
-        int startHour = Integer.parseInt(startTime[0]);
-        String startPeriod = startTime[1];
+
+
+        int startHour = 0;
 
 
 
-        if(startHour < 5 && startPeriod.equalsIgnoreCase("pm"))
-        {
-            return false;
+        try {
+            startHour = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(start)));
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
 
-        if((startHour >= 4 && startHour <12) && startPeriod.equalsIgnoreCase("am"))
+
+       if(startHour >= EARLIEST_START || startHour <= LATEST_END)
         {
-            return false;
+            return true;
         }
-        return true;
+
+        return false;
 
     }
 
