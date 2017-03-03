@@ -29,6 +29,8 @@ public class PayEstimator {
 
     public int calcOvertimePay(int i, int end) {
 
-        return OVERTIMERATE;
+        int totalOvertimeHrs = end - i;
+
+        return totalOvertimeHrs * OVERTIMERATE;
     }
 }
