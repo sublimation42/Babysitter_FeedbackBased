@@ -11,10 +11,14 @@ public class PayEstimator {
 
     public int calcNormalPay(int start, int bed) {
 
-        
+
 
         int totalNormHrs = bed - start;
 
         return totalNormHrs * normalRate;
+    }
+
+    public int calcAsleepPay(int bed, int end) {
+        return 8;
     }
 }

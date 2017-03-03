@@ -32,5 +32,10 @@ public class PayEstimatorTest {
         assertEquals(12, p.calcNormalPay(5, 6));
     }
 
+    @Test
+    public void providedBedandEndTimeCalculateAsleepPay()
+    {
+        assertEquals(8, p.calcAsleepPay(9, 10));
+    }
 
 }
