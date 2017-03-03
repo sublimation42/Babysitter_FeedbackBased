@@ -1,4 +1,6 @@
+import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -6,13 +8,28 @@ import static org.junit.Assert.assertEquals;
  */
 public class SitterTest {
 
+    Sitter a;
+
+    @Before
+    public void setUp()
+    {
+        a = new Sitter();
+    }
+
     @Test
-    public void TestSitterGreeting()
+    public void givenHelloStringInputDoesSitterReturnGreeting()
     {
 
-        Sitter a = new Sitter();
+
 
        assertEquals("Hello I am Sitter2k.", a.sitterGreeting("Hello")) ;
+
+    }
+
+    @Test
+    public void sitterAcceptsEarliestStartTime()
+    {
+        assertEquals(true, a.isStartTimeAcceptable("5:PM"));
 
     }
 
