@@ -61,4 +61,9 @@ public class Sitter {
 
         return false;
     }
+
+    public Boolean isBedTimeAcceptable(String bed) {
+        return true;
+    }
+
 }

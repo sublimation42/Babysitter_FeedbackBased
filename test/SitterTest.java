@@ -73,8 +73,14 @@ public class SitterTest {
     @Test
     public void sitterAcceptsEndTimeMidnight()
     {
-                assertEquals(true, a.isEndTimeAcceptable("12:AM"));
+        assertEquals(true, a.isEndTimeAcceptable("12:AM"));
 
+    }
+
+    @Test
+    public void sitterAcceptsBedtime()
+    {
+        assertEquals(true, a.isBedTimeAcceptable("12:AM"));
     }
 
 
