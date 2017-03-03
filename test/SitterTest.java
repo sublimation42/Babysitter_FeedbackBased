@@ -33,5 +33,12 @@ public class SitterTest {
 
     }
 
+    @Test
+    public void sitterRejectsStartTimeOneHourTooEarly()
+    {
+        assertEquals(false, a.isStartTimeAcceptable("4:PM"));
+
+    }
+
 
 }

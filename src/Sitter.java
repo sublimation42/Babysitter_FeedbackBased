@@ -13,6 +13,17 @@ public class Sitter {
     }
 
     public Boolean isStartTimeAcceptable(String start){
+
+        String[] startTime = start.split(":");
+        int startHour = Integer.parseInt(startTime[0]);
+        String startPeriod = startTime[1];
+
+
+
+        if(startHour < 5 && startPeriod.equalsIgnoreCase("pm"))
+        {
+            return false;
+        }
         return true;
 
     }
