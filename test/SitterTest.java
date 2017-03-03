@@ -78,9 +78,23 @@ public class SitterTest {
     }
 
     @Test
+    public void sitterRejectedEndTimeFiveAM()
+    {
+        assertEquals(false, a.isEndTimeAcceptable("5:AM"));
+
+    }
+
+
+    @Test
     public void sitterAcceptsBedtime()
     {
-        assertEquals(true, a.isBedTimeAcceptable("12:AM"));
+        assertEquals(true, a.isBedTimeAcceptable("6:PM", "12:AM", "1:AM"));
+    }
+
+    @Test
+    public void sitterRejectsOutofBoundsBedTime()
+    {
+        assertEquals(false, a.isBedTimeAcceptable("6:PM", "12:PM", "1:AM"));
     }
 
 

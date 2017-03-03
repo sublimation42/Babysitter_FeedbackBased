@@ -62,8 +62,44 @@ public class Sitter {
         return false;
     }
 
-    public Boolean isBedTimeAcceptable(String bed) {
-        return true;
+    public Boolean isBedTimeAcceptable(String start, String bed, String end) {
+        int sHour = 0;
+        int bHour = 0;
+        int eHour = 0;
+
+        try {
+            sHour = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(start)));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            bHour = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(bed)));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            eHour = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(end)));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+
+        if(bHour > 4)
+        {
+            if (sHour < bHour && bHour < eHour)
+            {
+                return true;
+            }
+        }
+
+        if (bHour <= 4 && isStartTimeAcceptable(start) == Boolean.TRUE)
+        {
+            return true;
+        }
+        return false;
     }
 
 }
