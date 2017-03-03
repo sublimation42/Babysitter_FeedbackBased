@@ -12,7 +12,7 @@ public class Sitter {
     public static final SimpleDateFormat TWELVE = new SimpleDateFormat("hh:a");
     public static final SimpleDateFormat TWENTYFOUR = new SimpleDateFormat("HH");
     public static final int EARLIEST_START = 17;
-    public static final int LATEST_END = 3;
+    public static final int LATEST_END = 4;
 
 
     public String sitterGreeting(String incoming) {
@@ -44,6 +44,21 @@ public class Sitter {
     }
 
     public Boolean isEndTimeAcceptable(String end){
-        return true;
+        int endHour = 0;
+
+
+
+        try {
+            endHour = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(end)));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        if(endHour <= LATEST_END || endHour > 17)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
