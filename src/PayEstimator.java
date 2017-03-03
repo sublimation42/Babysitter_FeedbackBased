@@ -2,8 +2,9 @@
  * Created by Adam on 3/3/2017.
  */
 public class PayEstimator {
-    public static final int normalRate = 12;
-    public static final int bedtimeRate = 8;
+    public static final int NORMALRATE = 12;
+    public static final int BEDTIMERATE = 8;
+    public static final int OVERTIMERATE = 16;
 
 
     public int calculatePay(int hrs) {
@@ -16,18 +17,18 @@ public class PayEstimator {
 
         int totalNormHrs = bed - start;
 
-        return totalNormHrs * normalRate;
+        return totalNormHrs * NORMALRATE;
     }
 
     public int calcAsleepPay(int bed, int end) {
 
         int totalAsleepHrs = end - bed;
 
-        return totalAsleepHrs * bedtimeRate;
+        return totalAsleepHrs * BEDTIMERATE;
     }
 
     public int calcOvertimePay(int i, int end) {
 
-        return 16;
+        return OVERTIMERATE;
     }
 }
