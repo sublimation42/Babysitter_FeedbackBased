@@ -17,7 +17,7 @@ public class PayEstimatorTest {
     }
 
     @Test
-    public void givenHoursREturnPay()
+    public void givenHoursReturnPay()
     {
 
 
@@ -25,5 +25,12 @@ public class PayEstimatorTest {
         assertEquals(1, p.calculatePay(1));
 
     }
+
+    @Test
+    public void providedStartandBedTimeCalculateNormalPay()
+    {
+        assertEquals(12, p.calcNormalPay("5PM", "6PM"));
+    }
+
 
 }
