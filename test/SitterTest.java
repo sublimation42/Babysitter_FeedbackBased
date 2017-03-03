@@ -40,5 +40,20 @@ public class SitterTest {
 
     }
 
+    @Test
+    public void sitterRejectsStartTimeBetween4AMandNoon()
+    {
+        assertEquals(false, a.isStartTimeAcceptable("11:AM"));
+
+    }
+
+    @Test
+    public void sitterAcceptsLatestEndTime()
+    {
+        assertEquals(true, a.isEndTimeAcceptable("4:AM"));
+
+    }
+
+
 
 }

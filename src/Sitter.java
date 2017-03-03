@@ -24,7 +24,16 @@ public class Sitter {
         {
             return false;
         }
+
+        if((startHour >= 4 && startHour <12) && startPeriod.equalsIgnoreCase("am"))
+        {
+            return false;
+        }
         return true;
 
+    }
+
+    public Boolean isEndTimeAcceptable(String end){
+        return true;
     }
 }
