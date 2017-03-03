@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 /**
- * Created by Adam on 3/3/2017.
+ * Created by Adam Howard on 3/3/2017.
  */
 
 
@@ -15,8 +15,8 @@ public class Sitter {
     public static final int LATEST_END = 4;
 
 
-    public String sitterGreeting(String incoming) {
-        return "Hello I am Sitter2k.";
+    public String bookAppointment(String start, String bed, String end) {
+        return "Hello I am Sitter2k. Your appointment has been successfully booked.";
     }
 
     public Boolean isStartTimeAcceptable(String start){

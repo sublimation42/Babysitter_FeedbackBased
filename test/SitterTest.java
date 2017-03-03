@@ -17,12 +17,12 @@ public class SitterTest {
     }
 
     @Test
-    public void givenHelloStringInputDoesSitterReturnGreeting()
+    public void givenStartBedandEndTimesBookApointment()
     {
 
 
 
-       assertEquals("Hello I am Sitter2k.", a.sitterGreeting("Hello")) ;
+       assertEquals("Hello I am Sitter2k. Your appointment has been successfully booked.", a.bookAppointment("5:PM", "8:PM", "10:PM")) ;
 
     }
 
