@@ -29,15 +29,21 @@ public class PayEstimatorTest {
     }
 
     @Test
+    public void AppointmentWithOneHourOvertimeAndBedtimeHoursReturnPay()
+    {
+        assertEquals(36, p.calculatePay("22","23","1"));
+    }
+
+    @Test
     public void providedStartandBedTimeCalculateNormalPay()
     {
-        assertEquals(12, p.calcNormalPay(5, 6));
+        assertEquals(12, p.calcNormalPay(17, 18));
     }
 
     @Test
     public void providedBedandEndTimeCalculateAsleepPay()
     {
-        assertEquals(8, p.calcAsleepPay(9, 10));
+        assertEquals(8, p.calcAsleepPay(21, 22));
     }
 
     @Test

@@ -32,7 +32,8 @@ public class PayEstimator {
         }
         else if(isOvertime(st,bt,et) )
         {
-            //do something
+            totalPay = calcNormalPay(st,bt) + calcAsleepPay(bt,et) + calcOvertimePay(0, et);
+
         }
         else if (bt == 99)
         {
@@ -59,8 +60,19 @@ public class PayEstimator {
     }
 
     public int calcAsleepPay(int bed, int end) {
+        int totalAsleepHrs;
 
-        int totalAsleepHrs = end - bed;
+        if(end < 4)
+        {
+            end = 24;
+        }
+
+
+            totalAsleepHrs = end - bed;
+
+
+
+
 
         return totalAsleepHrs * BEDTIMERATE;
     }
