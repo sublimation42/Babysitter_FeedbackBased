@@ -44,4 +44,10 @@ public class PayEstimatorTest {
         assertEquals(16, p.calcOvertimePay (0, 1));
     }
 
+    @Test
+    public void appointmentIncludesOvertimeHoursHelperReturnBoolean()
+    {
+        assertEquals(true, p.isOvertime ("18", "20", "1"));
+    }
+
 }

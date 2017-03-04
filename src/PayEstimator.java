@@ -38,4 +38,9 @@ public class PayEstimator {
 
         return totalOvertimeHrs * OVERTIMERATE;
     }
+
+    public boolean isOvertime(String s, String s1, String s2) {
+
+        return true;
+    }
 }
