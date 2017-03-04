@@ -1,4 +1,5 @@
-PROJECT TITLE: Sitter Simulator and Pay Calculator 
+PROJECT TITLE: Sitter Simulator and Pay Calculator
+
 PURPOSE OF PROJECT: Babysitter Kata Completion: calculates sitter pay using variable rates  
 	Redone based on feedback
 
