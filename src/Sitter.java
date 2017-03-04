@@ -26,15 +26,10 @@ public class Sitter {
 
 
 
-        int startHour = 0;
+        int startHour = convertStartTime(start);
 
 
 
-        try {
-            startHour = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(start)));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
 
 
        if(startHour >= EARLIEST_START || startHour <= LATEST_END)
@@ -47,15 +42,9 @@ public class Sitter {
     }
 
     public Boolean isEndTimeAcceptable(String end){
-        int endHour = 0;
 
+        int endHour = convertEndTime(end);
 
-
-        try {
-            endHour = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(end)));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
 
         if(endHour <= LATEST_END || endHour > 17)
         {
@@ -66,30 +55,11 @@ public class Sitter {
     }
 
     public Boolean isBedTimeAcceptable(String start, String bed, String end) {
-        int sHour = 0;
-        int bHour = 0;
-        int eHour = 0;
+        int sHour = convertStartTime(start);
+        int bHour = convertBedTime(bed);
+        int eHour = convertEndTime(end);
 
-        try {
-            sHour = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(start)));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            bHour = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(bed)));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            eHour = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(end)));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-
-
+       
         if(bHour > 4)
         {
             if (sHour < bHour && bHour < eHour)
