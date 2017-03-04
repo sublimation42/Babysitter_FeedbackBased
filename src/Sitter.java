@@ -17,11 +17,29 @@ public class Sitter {
 
     public String bookAppointment(String start, String bed, String end) {
 
+        int st = convertStartTime(start);
+        int et = convertEndTime(end);
+        int bt;
+
+        if (bed.equalsIgnoreCase("na"))
+        {
+            bt = 99;
+        }
+        else
+        {
+            bt = convertBedTime(bed);
+        }
+
+
+        PayEstimator p = new PayEstimator();
+
         String message = "Hello I am Sitter2k. ";
 
         if (isStartTimeAcceptable(start) && isBedTimeAcceptable(start, bed, end) && isEndTimeAcceptable(end))
         {
-            message =  message + "Your appointment has been successfully booked.";
+            message =  message + "Your appointment has been successfully booked. " +
+                    "Your pay for this job is: " +
+                    p.calculatePay(st, bt, et );
         }
         else
         {

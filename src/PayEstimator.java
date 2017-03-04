@@ -7,41 +7,25 @@ public class PayEstimator {
     public static final int OVERTIMERATE = 16;
 
 
-    public int calculatePay(String start, String bed, String end) {
+    public int calculatePay(int start, int bed, int end) {
         int totalPay = 0;
 
-        int st = Integer.parseInt(start);
-        int et = Integer.parseInt(end);
-        int bt;
-
-
-        if(bed.equalsIgnoreCase("na"))
+        if(isOvertime(start,bed,end) && bed == 99)
         {
-            bt = 99;
+            totalPay = calcOvertimePay(0,end);
+        }
+        else if(isOvertime(start,bed,end) )
+        {
+            totalPay = calcNormalPay(start,bed) + calcAsleepPay(bed,end) + calcOvertimePay(0, end);
+
+        }
+        else if (bed == 99)
+        {
+            totalPay = calcNormalPay(start,end);
         }
         else
         {
-            bt = Integer.parseInt(bed);
-        }
-
-
-
-        if(isOvertime(st,bt,et) && bt == 99)
-        {
-            totalPay = calcOvertimePay(0,et);
-        }
-        else if(isOvertime(st,bt,et) )
-        {
-            totalPay = calcNormalPay(st,bt) + calcAsleepPay(bt,et) + calcOvertimePay(0, et);
-
-        }
-        else if (bt == 99)
-        {
-            totalPay = calcNormalPay(st,et);
-        }
-        else
-        {
-            totalPay = calcNormalPay(st,bt) + calcAsleepPay(bt,et);
+            totalPay = calcNormalPay(start,bed) + calcAsleepPay(bed,end);
         }
 
 

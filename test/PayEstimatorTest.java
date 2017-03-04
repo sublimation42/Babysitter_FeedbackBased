@@ -19,25 +19,25 @@ public class PayEstimatorTest {
     @Test
     public void shortAppointmentNoOvertimeorBedtimeHoursReturnPay()
     {
-        assertEquals(12, p.calculatePay("17","NA","18"));
+        assertEquals(12, p.calculatePay(17,99,18));
     }
 
     @Test
     public void AppointmentWithOneHourOvertimeNoBedtimeHoursReturnPay()
     {
-        assertEquals(16, p.calculatePay("0","NA","01"));
+        assertEquals(16, p.calculatePay(0,99,1));
     }
 
     @Test
     public void AppointmentWithOneHourOvertimeAndBedtimeHoursReturnPay()
     {
-        assertEquals(36, p.calculatePay("22","23","1"));
+        assertEquals(36, p.calculatePay(22,23,1));
     }
 
     @Test
     public void AppointmentWithNoOvertimeReturnPay()
     {
-        assertEquals(40, p.calculatePay("18","20","22"));
+        assertEquals(40, p.calculatePay(18,20,22));
     }
 
 
