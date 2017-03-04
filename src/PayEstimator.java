@@ -41,7 +41,7 @@ public class PayEstimator {
         }
         else
         {
-            //do something else
+            totalPay = calcNormalPay(st,bt) + calcAsleepPay(bt,et);
         }
 
 

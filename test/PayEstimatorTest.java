@@ -35,6 +35,13 @@ public class PayEstimatorTest {
     }
 
     @Test
+    public void AppointmentWithNoOvertimeReturnPay()
+    {
+        assertEquals(40, p.calculatePay("18","20","22"));
+    }
+
+
+    @Test
     public void providedStartandBedTimeCalculateNormalPay()
     {
         assertEquals(12, p.calcNormalPay(17, 18));
