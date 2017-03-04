@@ -17,12 +17,12 @@ public class PayEstimatorTest {
     }
 
     @Test
-    public void givenHoursReturnPay()
+    public void shortAppointmentNoOvertimeorBedtimeHoursReturnPay()
     {
 
 
 
-        assertEquals(1, p.calculatePay(1));
+        assertEquals(1, p.calculatePay("17","NA","NA"));
 
     }
 

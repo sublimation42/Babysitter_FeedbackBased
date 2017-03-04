@@ -7,8 +7,13 @@ public class PayEstimator {
     public static final int OVERTIMERATE = 16;
 
 
-    public int calculatePay(int hrs) {
-        return hrs;
+    public int calculatePay(String start, String bed, String end) {
+
+        if(bed.equalsIgnoreCase("na"))
+        {
+            return 1;
+        }
+        return 1;
     }
 
     public int calcNormalPay(int start, int bed) {
