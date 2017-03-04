@@ -47,13 +47,13 @@ public class PayEstimatorTest {
     @Test
     public void appointmentIncludesOvertimeHoursHelperReturnBoolean()
     {
-        assertEquals(true, p.isOvertime ("18", "20", "1"));
+        assertEquals(true, p.isOvertime (18, 20, 1));
     }
 
     @Test
     public void appointmentDoesNotIncludesOvertimeHoursHelperReturnBoolean()
     {
-        assertEquals(false, p.isOvertime ("18", "20", "21"));
+        assertEquals(false, p.isOvertime (18, 20, 21));
     }
 
 }

@@ -48,9 +48,9 @@ public class PayEstimator {
         return totalOvertimeHrs * OVERTIMERATE;
     }
 
-    public boolean isOvertime(String start, String bed, String end) {
+    public boolean isOvertime(int start, int bed, int end) {
 
-        if(Integer.parseInt(bed) < 4 || Integer.parseInt(end) < 4)
+        if(bed < 4 || end < 4)
         {
             return true;
         }
