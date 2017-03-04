@@ -117,4 +117,19 @@ public class Sitter {
         return cStart;
 
     }
+
+    public int convertBedTime(String b) {
+
+        int cBed = 0;
+
+        try {
+            cBed = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(b)));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return cBed;
+
+
+    }
 }

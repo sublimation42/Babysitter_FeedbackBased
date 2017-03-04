@@ -104,6 +104,13 @@ public class SitterTest {
 
     }
 
+    @Test
+    public void convertBedTimeTo24()
+    {
+        assertEquals(19, a.convertBedTime("7:PM"));
+
+    }
+
 
 
 }
