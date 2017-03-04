@@ -8,21 +8,28 @@ public class PayEstimator {
 
 
     public int calculatePay(String start, String bed, String end) {
+        int totalPay = 1;
 
         int st = Integer.parseInt(start);
         int et = Integer.parseInt(end);
+        int bt;
 
 
         if(bed.equalsIgnoreCase("na"))
         {
-            int bt = 99;
+            bt = 99;
         }
         else
         {
-            int bt = Integer.parseInt(bed);
+            bt = Integer.parseInt(bed);
         }
 
-        return 1;
+        if(isOvertime(st,bt,et))
+        {
+            totalPay = calcOvertimePay(0,et);
+        }
+
+        return totalPay;
     }
 
     public int calcNormalPay(int start, int bed) {
