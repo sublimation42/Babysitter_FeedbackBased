@@ -8,7 +8,7 @@ public class PayEstimator {
 
 
     public int calculatePay(String start, String bed, String end) {
-        int totalPay = 1;
+        int totalPay = 0;
 
         int st = Integer.parseInt(start);
         int et = Integer.parseInt(end);
@@ -24,10 +24,27 @@ public class PayEstimator {
             bt = Integer.parseInt(bed);
         }
 
-        if(isOvertime(st,bt,et))
+
+
+        if(isOvertime(st,bt,et) && bt == 99)
         {
             totalPay = calcOvertimePay(0,et);
         }
+        else if(isOvertime(st,bt,et) )
+        {
+            //do something
+        }
+        else if (bt == 99)
+        {
+            totalPay = calcNormalPay(st,et);
+        }
+        else
+        {
+            //do something else
+        }
+
+
+
 
         return totalPay;
     }
