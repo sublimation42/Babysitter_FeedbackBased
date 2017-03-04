@@ -23,6 +23,10 @@ public class Sitter {
         {
             message =  message + "Your appointment has been successfully booked.";
         }
+        else
+        {
+            message = message + "I'm sorry but available hours are 5:00 PM - 4:00 AM.";
+        }
 
 
 
@@ -66,7 +70,7 @@ public class Sitter {
         {
             return true;
         }
-        
+
         int sHour = convertStartTime(start);
         int bHour = convertBedTime(bed);
         int eHour = convertEndTime(end);

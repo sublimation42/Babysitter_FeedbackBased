@@ -31,6 +31,14 @@ public class SitterTest {
     }
 
     @Test
+    public void givenStartNoBedandBadEndTimesBookApointment()
+    {
+
+        assertEquals("Hello I am Sitter2k. I'm sorry but available hours are 5:00 PM - 4:00 AM." +
+                "", a.bookAppointment("5:PM", "NA", "6:AM")) ;
+    }
+
+    @Test
     public void sitterAcceptsEarliestStartTime()
     {
         assertEquals(true, a.isStartTimeAcceptable("5:PM"));
