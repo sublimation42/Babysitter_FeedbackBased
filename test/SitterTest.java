@@ -97,6 +97,13 @@ public class SitterTest {
         assertEquals(false, a.isBedTimeAcceptable("6:PM", "12:PM", "1:AM"));
     }
 
+    @Test
+    public void convertStartTimeTo24()
+    {
+        assertEquals(17, a.convertStartTime("5:PM"));
+
+    }
+
 
 
 }

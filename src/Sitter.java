@@ -16,6 +16,9 @@ public class Sitter {
 
 
     public String bookAppointment(String start, String bed, String end) {
+
+
+
         return "Hello I am Sitter2k. Your appointment has been successfully booked.";
     }
 
@@ -102,4 +105,16 @@ public class Sitter {
         return false;
     }
 
+    public int convertStartTime(String s) {
+
+        int cStart = 0;
+        try {
+            cStart = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(s)));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return cStart;
+
+    }
 }
