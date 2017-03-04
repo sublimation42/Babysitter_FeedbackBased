@@ -9,10 +9,19 @@ public class PayEstimator {
 
     public int calculatePay(String start, String bed, String end) {
 
+        int st = Integer.parseInt(start);
+        int et = Integer.parseInt(end);
+
+
         if(bed.equalsIgnoreCase("na"))
         {
-            return 1;
+            int bt = 99;
         }
+        else
+        {
+            int bt = Integer.parseInt(bed);
+        }
+
         return 1;
     }
 
@@ -39,8 +48,12 @@ public class PayEstimator {
         return totalOvertimeHrs * OVERTIMERATE;
     }
 
-    public boolean isOvertime(String s, String s1, String s2) {
+    public boolean isOvertime(String start, String bed, String end) {
 
-        return true;
+        if(Integer.parseInt(bed) < 4 || Integer.parseInt(end) < 4)
+        {
+            return true;
+        }
+        return false;
     }
 }

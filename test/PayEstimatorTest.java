@@ -22,7 +22,7 @@ public class PayEstimatorTest {
 
 
 
-        assertEquals(1, p.calculatePay("17","NA","NA"));
+        assertEquals(1, p.calculatePay("17","NA","18"));
 
     }
 
@@ -48,6 +48,12 @@ public class PayEstimatorTest {
     public void appointmentIncludesOvertimeHoursHelperReturnBoolean()
     {
         assertEquals(true, p.isOvertime ("18", "20", "1"));
+    }
+
+    @Test
+    public void appointmentDoesNotIncludesOvertimeHoursHelperReturnBoolean()
+    {
+        assertEquals(false, p.isOvertime ("18", "20", "21"));
     }
 
 }
