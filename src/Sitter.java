@@ -62,9 +62,16 @@ public class Sitter {
     }
 
     public Boolean isBedTimeAcceptable(String start, String bed, String end) {
+        if (bed.equalsIgnoreCase("na"))
+        {
+            return true;
+        }
+        
         int sHour = convertStartTime(start);
         int bHour = convertBedTime(bed);
         int eHour = convertEndTime(end);
+
+
 
 
         if(bHour > 4)

@@ -20,10 +20,14 @@ public class SitterTest {
     public void givenStartBedandEndTimesBookApointment()
     {
 
-
-
        assertEquals("Hello I am Sitter2k. Your appointment has been successfully booked.", a.bookAppointment("5:PM", "8:PM", "10:PM")) ;
+    }
 
+    @Test
+    public void givenStartNoBedandEndTimesBookApointment()
+    {
+
+        assertEquals("Hello I am Sitter2k. Your appointment has been successfully booked.", a.bookAppointment("5:PM", "NA", "6:PM")) ;
     }
 
     @Test
