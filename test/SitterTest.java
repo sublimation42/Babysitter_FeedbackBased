@@ -111,6 +111,13 @@ public class SitterTest {
 
     }
 
+    @Test
+    public void convertEndTimeTo24()
+    {
+        assertEquals(20, a.convertEndTime("8:PM"));
+
+    }
+
 
 
 }

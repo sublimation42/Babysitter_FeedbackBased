@@ -132,4 +132,17 @@ public class Sitter {
 
 
     }
+
+    public int convertEndTime(String end) {
+
+        int cEnd = 0;
+
+        try {
+            cEnd = Integer.parseInt(TWENTYFOUR.format(TWELVE.parse(end)));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return cEnd;
+    }
 }
